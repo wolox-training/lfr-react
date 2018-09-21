@@ -1,9 +1,10 @@
 $equalizer-black: #000;
 $equalizer-grey: #999;
+$font-page: 'Roboto', sans-serif;
 
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: $font-page;
   margin: 0;
   padding: 0;
 }
