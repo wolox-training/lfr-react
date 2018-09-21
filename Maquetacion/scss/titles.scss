@@ -1,0 +1,16 @@
+.title {
+  color: black;
+  display: flex;
+  font-size: 24px;
+  margin: 60px 10px 0;
+
+  &::before {
+    content: url(assets/triangle.svg);
+    height: 90px;
+    left: 18px;
+    position: relative;
+    top: -35px;
+    width: 70px;
+    z-index: -10;
+  }
+}
