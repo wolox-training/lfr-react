@@ -1,8 +1,9 @@
 .tech {
+  align-items: center;
   background-color: $green;
   border-radius: 5px;
-  box-shadow: -10px -10px $white, -10px -10px 0px 1px $green;
-  display: flex;
+  box-shadow: -10px -10px $white, -10px -10px 0 1px $green;
+  display: inline-flex;
   flex-direction: column;
   height: 320px;
   margin: 5px 150px;
@@ -10,7 +11,7 @@
   width: 220px;
 
   .logo {
-    margin: 15px auto;
+    margin: 15px 0;
     width: $tech-logo-size;
   }
 
@@ -19,17 +20,16 @@
   }
 
   .age {
-    font-weight: bold;
     font-size: $text-medium;
+    font-weight: bold;
   }
 
   .text {
-    margin: 10px auto;
+    padding: 5px 20px;
     width: 100%;
-    padding: 0 20px;
   }
 
-  .descrip {
+  .story {
     font-size: $text-medium;
   }
 }
