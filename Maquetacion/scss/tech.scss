@@ -1,42 +1,43 @@
 .front {
-	display: inline-flex;
-	flex-wrap: wrap;
-	margin: 0 125px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0 125px;
 
-	.tech {
-		background-color: $green;
-		border-radius: 5px;
-		box-shadow: -10px -10px $white, -10px -10px 0 1px $green;
-		display: inline-flex;
-		flex-direction: column;
-		height: 320px;
-		justify-content: center;
-		margin: 15px 15px;
-		text-align: center;
+  .tech {
+    background-color: $green;
+    border-radius: 5px;
+    box-shadow: -10px -10px $white, -10px -10px 0 1px $green;
+    display: inline-flex;
+    flex-direction: column;
+    height: 320px;
+    justify-content: center;
+    margin: 15px 15px;
+    text-align: center;
+    width: 220px;
 
-		.logo {
-			margin: 5px auto;
-			max-height: 100px;
-			width: $tech-logo-size;
-		}
+    .logo {
+      margin: 5px auto;
+      max-height: 100px;
+      width: $tech-logo-size;
+    }
 
-		.title-card {
-			font-size: $text-medium;
-		}
+    .title-card {
+      font-size: $text-medium;
+    }
 
-		.age {
-			font-size: $text-medium;
-			font-weight: bold;
-		}
+    .age {
+      font-size: $text-medium;
+      font-weight: bold;
+    }
 
-		.text {
-			margin: 5px auto;
-			padding: 0 5px;
-			width: 100%;
-		}
+    .text {
+      margin: 5px auto;
+      padding: 0 5px;
+      width: 100%;
+    }
 
-		.descrip {
-			font-size: $text-medium;
-		}
-	}
+    .story {
+      font-size: $text-medium;
+    }
+  }
 }
