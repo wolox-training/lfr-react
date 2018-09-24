@@ -13,7 +13,12 @@
     justify-content: center;
     margin: 15px 15px;
     text-align: center;
+    transition: 1s;
     width: 220px;
+
+    &:hover {
+      box-shadow: 10px 10px $white, 10px 10px 0 1px $green;
+    }
 
     .logo {
       margin: 5px auto;
