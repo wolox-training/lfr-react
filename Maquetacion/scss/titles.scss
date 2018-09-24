@@ -1,16 +1,16 @@
 .title {
-	color: black;
-	display: flex;
-	font-size: $text-big;
-	margin: 110px 50px 0;
+  color: black;
+  display: flex;
+  font-size: $text-big;
+  margin: 140px 50px 0;
 
-	&::before {
-		content: url(assets/triangle.svg);
-		height: 90px;
-		left: 18px;
-		position: relative;
-		top: -35px;
-		width: 70px;
-		z-index: -10;
-	}
+  &::before {
+    content: url(assets/triangle.svg);
+    height: 90px;
+    left: 18px;
+    position: relative;
+    top: -35px;
+    width: 70px;
+    z-index: -10;
+  }
 }
