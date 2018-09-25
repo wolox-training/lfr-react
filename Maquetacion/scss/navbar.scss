@@ -15,6 +15,13 @@
   }
 
   .menu {
+    display: none;
     font-size: $text-medium;
+  }
+
+  @media (min-width: 1024px) {
+    .menu {
+      display: block;
+    }
   }
 }

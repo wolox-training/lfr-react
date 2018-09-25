@@ -2,6 +2,7 @@
   color: black;
   display: flex;
   font-size: $text-big;
+  justify-content: center;
   margin: 140px 50px 0;
 
   &::before {
@@ -12,5 +13,9 @@
     top: -35px;
     width: 70px;
     z-index: -10;
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: normal;
   }
 }
