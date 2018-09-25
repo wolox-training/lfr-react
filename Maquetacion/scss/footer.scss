@@ -1,0 +1,30 @@
+.footer-bar {
+  align-items: center;
+  background: $blue;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  margin-top: 30px;
+
+  .text-f {
+    color: $white;
+    font-size: $text-big;
+    margin: 10px;
+    text-transform: uppercase;
+  }
+
+  .logo-w {
+    margin: 10px;
+  }
+
+  .copy {
+    align-self: flex-end;
+    color: $white;
+    float: right;
+    font-size: $text-small;
+    letter-spacing: 1px;
+    margin-right: 20px;
+  }
+}
