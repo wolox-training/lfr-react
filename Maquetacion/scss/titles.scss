@@ -1,8 +1,8 @@
 .title {
   color: black;
   display: flex;
-  font-size: 24px;
-  margin: 60px 10px 0;
+  font-size: $text-big;
+  margin: 90px 50px 0;
 
   &::before {
     content: url(assets/triangle.svg);
