@@ -8,7 +8,7 @@
   justify-content: center;
   margin-top: 30px;
 
-  .text-f {
+  .footer-text {
     color: $white;
     font-size: $text-big;
     margin: 10px;
@@ -22,9 +22,8 @@
   .copy {
     align-self: flex-end;
     color: $white;
-    float: right;
     font-size: $text-small;
     letter-spacing: 1px;
-    margin-right: 20px;
+    padding-right: 20px;
   }
 }
