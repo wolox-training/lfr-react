@@ -17,30 +17,33 @@
       height: 100%;
       padding: 160px 5px;
     }
+  }
 
-    .logo {
-      margin: 5px auto;
-      max-height: 100px;
-      width: $tech-logo-size;
-    }
+  %text {
+    margin: 5px auto;
+    padding: 0 5px;
+    width: 100%;
+  }
 
-    .title-card {
-      font-size: $text-medium;
-    }
+  .logo {
+    margin: 5px auto;
+    max-height: 100px;
+    width: $tech-logo-size;
+  }
 
-    .age {
-      font-size: $text-medium;
-      font-weight: bold;
-    }
+  .title-card {
+    @extend %text;
+    font-size: $text-medium;
+  }
 
-    .text {
-      margin: 5px auto;
-      padding: 0 5px;
-      width: 100%;
-    }
+  .age {
+    @extend %text;
+    font-size: $text-medium;
+    font-weight: bold;
+  }
 
-    .story {
-      font-size: $text-medium;
-    }
+  .story {
+    @extend %text;
+    font-size: $text-medium;
   }
 }
