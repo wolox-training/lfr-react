@@ -1,7 +1,8 @@
-.front {
+.section {
   display: inline-flex;
   flex-wrap: wrap;
-  margin: 0 125px;
+  padding: 0 125px;
+
 
   .tech {
     background-color: $green;
@@ -12,8 +13,8 @@
     height: 320px;
     justify-content: center;
     margin: 15px 15px;
+    max-width: 220px;
     text-align: center;
-    width: 220px;
 
     .logo {
       margin: 5px auto;
