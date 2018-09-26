@@ -1,35 +1,62 @@
-.tech {
-  align-items: center;
-  background-color: $green;
-  border-radius: 5px;
-  box-shadow: -10px -10px $white, -10px -10px 0 1px $green;
+.section {
   display: inline-flex;
-  flex-direction: column;
-  height: 320px;
-  margin: 5px 150px;
-  text-align: center;
-  width: 220px;
+  flex-wrap: wrap;
+  padding: 0 125px;
 
-  .logo {
-    margin: 15px 0;
-    width: $tech-logo-size;
-  }
+  .tech {
+    background-color: $green;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    justify-content: center;
+    margin: 15px 15px;
+    max-width: 220px;
+    position: relative;
+    text-align: center;
 
-  .title-card {
-    font-size: $text-medium;
-  }
+    &::before {
+      border: 1px solid $green;
+      border-radius: 5px;
+      content: '';
+      height: 100%;
+      position: absolute;
+      transform: translate(-10px,-10px);
+      transition: transform 0.3s;
+      width: 100%;
+      z-index: -1;
+    }
 
-  .age {
-    font-size: $text-medium;
-    font-weight: bold;
-  }
+    &:hover::before {
+      transform: translate(10px,10px);
+    }
 
-  .text {
-    padding: 5px 20px;
-    width: 100%;
-  }
+    %text {
+      margin: 5px auto;
+      padding: 0 5px;
+      width: 100%;
+    }
 
-  .story {
-    font-size: $text-medium;
+    .logo {
+      margin: 5px auto;
+      max-height: 100px;
+      width: $tech-logo-size;
+    }
+
+    .title-card {
+      @extend %text;
+      font-size: $text-medium;
+    }
+
+    .age {
+      @extend %text;
+      font-size: $text-medium;
+      font-weight: bold;
+    }
+
+    .story {
+      @extend %text;
+      font-size: $text-medium;
+    }
   }
 }
