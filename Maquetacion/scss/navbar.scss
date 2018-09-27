@@ -9,12 +9,13 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 
   .logo-w {
     height: $nav-logo-height;
   }
 
   .menu {
-    font-size: $text-medium;
+    font-size: $text-big;
   }
 }

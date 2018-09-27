@@ -12,10 +12,11 @@
     width: 220px;
 
     &:first-child {
+      align-content: center;
       border-right: 2px solid $green;
+      display: grid;
       grid-area: bigitem;
       height: 100%;
-      padding: 160px 5px;
     }
   }
 
