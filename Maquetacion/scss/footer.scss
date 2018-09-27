@@ -7,7 +7,7 @@
   height: 200px;
   justify-content: center;
   margin-top: 30px;
-  padding-right: 20px;
+  padding: 20px;
 
   .footer-text {
     color: $white;
@@ -23,7 +23,6 @@
   .copy {
     align-self: flex-end;
     color: $white;
-    font-size: $text-small;
     letter-spacing: 1px;
   }
 }
