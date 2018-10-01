@@ -19,8 +19,10 @@
     display: none;
     font-size: $text-medium;
   }
+}
 
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) {
+  .nav-bar {
     .menu {
       display: block;
     }

@@ -14,8 +14,10 @@
     width: 70px;
     z-index: -10;
   }
+}
 
-  @media (min-width: 1024px) {
+@media (min-width: 1024px) {
+  .title {
     justify-content: normal;
   }
 }

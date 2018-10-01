@@ -47,9 +47,10 @@
     @extend %text;
     font-size: $text-medium;
   }
+}
 
-
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  .container {
     grid-auto-columns: 1fr;
     grid-template-areas: inherit;
     justify-items: center;
