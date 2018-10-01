@@ -27,9 +27,7 @@
 }
 
 @media (max-width: 1024px) {
-  .footer-bar {
-    .copy {
-      align-self: center;
-    }
+  .footer-bar .copy {
+    align-self: center;
   }
 }

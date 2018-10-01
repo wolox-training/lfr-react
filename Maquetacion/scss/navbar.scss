@@ -22,9 +22,7 @@
 }
 
 @media (min-width: 1024px) {
-  .nav-bar {
-    .menu {
-      display: block;
-    }
+  .nav-bar .menu {
+    display: block;
   }
 }
