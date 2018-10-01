@@ -12,40 +12,45 @@
     width: 220px;
 
     &:first-child {
+      align-content: center;
       border-right: 2px solid $green;
+      display: grid;
       grid-area: bigitem;
       height: 100%;
-      padding: 160px 5px;
-    }
-
-    .logo {
-      margin: 5px auto;
-      max-height: 100px;
-      width: $tech-logo-size;
-    }
-
-    .title-card {
-      font-size: $text-medium;
-    }
-
-    .age {
-      font-size: $text-medium;
-      font-weight: bold;
-    }
-
-    .text {
-      margin: 5px auto;
-      padding: 0 5px;
-      width: 100%;
-    }
-
-    .story {
-      font-size: $text-medium;
     }
   }
 
+  %text {
+    margin: 5px auto;
+    padding: 0 5px;
+    width: 100%;
+  }
 
-  @media (max-width: 1024px) {
+  .logo {
+    margin: 5px auto;
+    max-height: 100px;
+    width: $tech-logo-size;
+  }
+
+  .title-card {
+    @extend %text;
+    font-size: $text-medium;
+  }
+
+  .age {
+    @extend %text;
+    font-size: $text-medium;
+    font-weight: bold;
+  }
+
+  .story {
+    @extend %text;
+    font-size: $text-medium;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
     grid-auto-columns: 1fr;
     grid-template-areas: inherit;
     justify-items: center;
