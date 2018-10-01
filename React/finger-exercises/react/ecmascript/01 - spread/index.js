@@ -10,7 +10,10 @@ export function min(...data) {
   }
 }
 
-export function copy(object) {
+export function copy(...object) {
   console.log(object);
-  return object;
+  console.log(object[0]);
+  console.log(...object);
+  //console.log(...object[0]);
+  return (object[0]);
 }
