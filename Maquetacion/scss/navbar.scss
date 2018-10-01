@@ -16,6 +16,13 @@
   }
 
   .menu {
+    display: none;
     font-size: $text-big;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-bar .menu {
+    display: block;
   }
 }

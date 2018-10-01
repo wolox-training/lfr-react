@@ -48,3 +48,30 @@
     font-size: $text-medium;
   }
 }
+
+@media (max-width: 1024px) {
+  .container {
+    grid-auto-columns: 1fr;
+    grid-template-areas: inherit;
+    justify-items: center;
+
+    .tech {
+      border-bottom: 2px solid $green;
+      margin: 5px;
+      padding: 5px;
+
+      &:first-child {
+        border-bottom: 2px solid $green;
+        border-right: none;
+        grid-area: inherit;
+        height: 320px;
+        margin: 5px;
+        padding: 5px;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
