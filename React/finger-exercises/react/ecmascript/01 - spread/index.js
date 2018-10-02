@@ -1,28 +1,22 @@
 import isArray from './utils';
 
 export function min(...data) {
-  if (data[0] === undefined) {
-    return (data[0]);
+  if (data.length === 0) { 
+    return undefined;
   } else if (isArray(...data)) {
     return (Math.min(...data[0]));
-  } else if (isArray(data)) {
-    return (Math.min(...data));
-  }
+  } 
+  return (Math.min(...data)); 
 }
 
 export function copy(...data) {
-  if (isArray(...data)) {
-    return [...data[0]];
-  } else {
-    return { ...data[0] };
-  }
+  const args = isArray(...data) ? [...data[0]] : { ...data[0] }
+  return args;
 }
 
-export function reverseMerge(...data) {
-  return [...data[1], ...data[0]];
-}
+export const reverseMerge = (...data) => [...data[1], ...data[0]];
 
 export function filterAttribs(data) {
-  let {a, b, ...rest} = data;
+  const {a, b, ...rest} = data;
   return (rest);
 }
