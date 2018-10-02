@@ -10,10 +10,19 @@ export function min(...data) {
   }
 }
 
-export function copy(...object) {
-  console.log(object);
-  console.log(object[0]);
-  console.log(...object);
-  //console.log(...object[0]);
-  return (object[0]);
+export function copy(...data) {
+  if (isArray(...data)) {
+    return [...data[0]];
+  } else {
+    return { ...data[0] };
+  }
+}
+
+export function reverseMerge(...data) {
+  return [...data[1], ...data[0]];
+}
+
+export function filterAttribs(data) {
+  let {a, b, ...rest} = data;
+  return (rest);
 }
