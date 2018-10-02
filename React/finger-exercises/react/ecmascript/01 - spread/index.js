@@ -4,10 +4,8 @@ export function min(...data) {
   if (data.length === 0) { 
     return undefined;
   } else if (isArray(...data)) {
-    console.log(...data[0] + 'a');
     return (Math.min(...data[0]));
   } 
-  console.log(...data);
   return (Math.min(...data)); 
 }
 
