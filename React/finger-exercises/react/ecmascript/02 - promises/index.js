@@ -1,8 +1,9 @@
 // Hint: use setInterval, create a new Promise and measure time with Date.now()
 
 export function delay(time) {
+  const startTime = Date.now();
   return new Promise((resolve, reject) => {
-    setInterval(function(){
+    setInterval(function() {
       const endTime = Date.now();
       const timeRandom = time - (endTime - startTime);
       if ((timeRandom) > (time + 100)) {
@@ -10,10 +11,10 @@ export function delay(time) {
       } else {
         resolve(timeRandom);
       }
-    }, 100);
+    }, 50);
   });
 }
 
-export function asyncDelay() {
-
+export function asyncDelay(time) {
+  return delay(time);
 }
