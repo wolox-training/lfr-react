@@ -1,12 +1,11 @@
 import isArray from './utils';
 
 export function min(...data) {
-  if (data.length === 0) { 
-    return;
-  } else if (isArray(...data)) {
+  if ((data.length !== 0) && (isArray(...data))) {
     return (Math.min(...data[0]));
-  } 
-  return (Math.min(...data)); 
+  } else if (data.length !== 0) {
+    return (Math.min(...data)); 
+  }
 }
 
 export function copy(...data) {
