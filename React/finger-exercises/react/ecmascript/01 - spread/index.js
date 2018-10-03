@@ -2,7 +2,7 @@ import isArray from './utils';
 
 export function min(...data) {
   if (data.length === 0) { 
-    return undefined;
+    return;
   } else if (isArray(...data)) {
     return (Math.min(...data[0]));
   } 
