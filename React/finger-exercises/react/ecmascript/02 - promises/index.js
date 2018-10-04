@@ -3,10 +3,10 @@
 export function delay(time) {
   const startTime = Date.now();
   return new Promise((resolve, reject) => {
-    setInterval(function() {
+    setTimeout(function() { 
       const endTime = Date.now();
       const timeRandom = time - (endTime - startTime);
-      if ((timeRandom) > (time + 100)) {
+      if (timeRandom > (time + 100)) {
         reject(Error('This time is too much !'));
       } else {
         resolve(timeRandom);
