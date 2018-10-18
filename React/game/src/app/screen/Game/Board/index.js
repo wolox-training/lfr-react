@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
-import Square from '../Square';
+import Square from '~square';
 
 import styles from './styles.scss';
 
 class Board extends Component {
-  renderSquare = place => (
-    <Square position={place} value={this.props.board[place]} handler={this.props.mouse} />
-  );
+  renderSquare = place => {
+    const board = this.props.board;
+    const mouse = this.props.mouse;
+    return <Square position={place} value={board[place]} handler={mouse} />;
+  };
 
   render() {
     return (

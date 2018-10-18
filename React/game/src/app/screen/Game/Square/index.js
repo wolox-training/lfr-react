@@ -4,13 +4,17 @@ import styles from './styles.scss';
 
 class Square extends Component {
   handleClick = () => {
-    this.props.handler(this.props.position);
-  }
+    const handler = this.props.handler;
+    const position = this.props.position;
+    const turn = handler(position);
+    return turn;
+  };
 
   render() {
+    const value = this.props.value;
     return (
       <button className={styles.square} onClick={this.handleClick}>
-        {this.props.value}
+        {value}
       </button>
     );
   }

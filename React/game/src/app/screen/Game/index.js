@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Board from './Board';
 import styles from './styles.scss';
+import { serialWin } from './constants';
 
 class Game extends Component {
   state = {
@@ -17,9 +18,13 @@ class Game extends Component {
     ]
   };
 
+  playerOne = 'X';
+  playerTwo = 'O';
+
   mouseClick = place => {
-    const history = this.state.history.slice(0, this.state.moves + 1);
-    const current = history[history.length - 1];
+    const { history, moves } = this.state;
+    const newhistory = history.slice(0, moves + 1);
+    const current = newhistory[newhistory.length - 1];
     const board = current.board.slice();
 
     if (board[place] === '' && !this.state.gameEnd) {
@@ -31,13 +36,11 @@ class Game extends Component {
             id: history.length
           }
         ]),
-        turn: this.state.turn == 'X' ? 'O' : 'X',
+        turn: this.state.turn === this.playerOne ? this.playerTwo : this.playerOne,
         moves: ++this.state.moves
       });
     }
-
     const result = this.winner();
-
     if (result === 'X') {
       this.setState({
         gameEnd: true,
@@ -52,20 +55,10 @@ class Game extends Component {
   };
 
   winner = () => {
-    const serialWin = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 5, 8],
-      [2, 5, 7],
-      [0, 4, 8],
-      [2, 4, 6]
-    ];
-    const board = this.state.history[this.state.moves - 1].board;
-    for (let i = 0; i < serialWin.length; i++) {
+    const { history } = this.state;
+    const { moves } = this.state;
+    const board = history[moves - 1].board;
+    for (let i = 0; i < serialWin.length - 1; i++) {
       if (
         board[serialWin[i][0]] === board[serialWin[i][1]] &&
         board[serialWin[i][1]] === board[serialWin[i][2]] &&
@@ -90,17 +83,8 @@ class Game extends Component {
       status = `Next player: ${this.state.turn}`;
     }
 
-    const history = this.state.history;
-    const current = history[this.state.moves];
-
-    const moves = history.map(step => {
-      const gameTurn = step.id ? `Go to game start ${step.id}` : `Go to move # $`;
-      return (
-        <li key={step.id}>
-          <button onClick={() => this.jumpTo(step.id)}>{gameTurn}</button>
-        </li>
-      );
-    });
+    const { history, moves } = this.state;
+    const current = history[moves];
 
     return (
       <div className={styles.game}>
@@ -109,7 +93,17 @@ class Game extends Component {
         </div>
         <div className={styles.gameinfo}>
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <ol>
+            {history.map(step => {
+              let id = step.id;
+              const gameTurn = id ? `Go to move # ${id}` : `Go to game start `;
+              return (
+              <li key={id}>
+              <button onClick={() => this.jumpTo(id)}>{gameTurn}</button>
+              </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     );

@@ -7,8 +7,9 @@
       "root": ["./src"],
       "alias": {
         "~components": "./src/app/components",
-        "~screens": "./src/app/screens",
-        "~redux": "./src/redux"
+        "~screen": "./src/app/screen",
+        "~redux": "./src/redux",
+        "~square": "./src/app/screen/Game/Square"
       }
     }]
   ]
