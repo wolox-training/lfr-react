@@ -5,10 +5,13 @@ import styles from './styles.scss';
 import { serialWin } from './constants';
 
 class Game extends Component {
+  playerOne = 'X';
+  playerTwo = 'O';
+
   state = {
     moves: 0,
     gameEnd: false,
-    turn: 'X',
+    turn: this.playerOne,
     turnWinner: '',
     history: [
       {
@@ -17,9 +20,6 @@ class Game extends Component {
       }
     ]
   };
-
-  playerOne = 'X';
-  playerTwo = 'O';
 
   mouseClick = place => {
     const { history, moves } = this.state;
@@ -41,12 +41,12 @@ class Game extends Component {
       });
     }
     const result = this.winner();
-    if (result === 'X') {
+    if (result === this.playerOne) {
       this.setState({
         gameEnd: true,
         turnWinner: result
       });
-    } else if (result === 'O') {
+    } else if (result === this.playerTwo) {
       this.setState({
         gameEnd: true,
         turnWinner: result
@@ -62,7 +62,7 @@ class Game extends Component {
       if (
         board[serialWin[i][0]] === board[serialWin[i][1]] &&
         board[serialWin[i][1]] === board[serialWin[i][2]] &&
-        (board[serialWin[i][0]] === 'O' || board[serialWin[i][0]] === 'X')
+        (board[serialWin[i][0]] === this.playerTwo || board[serialWin[i][0]] === this.playerOne)
       ) {
         return board[serialWin[i][0]];
       }
@@ -95,12 +95,12 @@ class Game extends Component {
           <div>{status}</div>
           <ol>
             {history.map(step => {
-              let id = step.id;
+              const id = step.id;
               const gameTurn = id ? `Go to move # ${id}` : `Go to game start `;
               return (
-              <li key={id}>
-              <button onClick={() => this.jumpTo(id)}>{gameTurn}</button>
-              </li>
+                <li key={id}>
+                  <button onClick={() => this.jumpTo(id)}>{gameTurn}</button>
+                </li>
               );
             })}
           </ol>
