@@ -35,7 +35,7 @@ class Board extends Component {
   }
 }
 
-Square.propTypes = {
+Board.propTypes = {
   board: PropTypes.arrayOf(PropTypes.string).isRequired,
   mouse: PropTypes.func.isRequired
 };
