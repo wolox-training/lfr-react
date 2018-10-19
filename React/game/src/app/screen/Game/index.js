@@ -69,7 +69,15 @@ class Game extends Component {
     }
   };
 
-  newjumpTo = () => this.jumpTo;
+  newHistory = step => {
+    const id = step.id;
+    const gameTurn = id ? `Go to move # ${id}` : `Go to game start `;
+    return (
+      <li key={id}>
+        <button onClick={() => this.jumpTo(id)}>{gameTurn}</button>
+      </li>
+    );
+  };
 
   jumpTo = step => {
     this.setState({
@@ -95,17 +103,7 @@ class Game extends Component {
         </div>
         <div className={styles.gameinfo}>
           <div>{status}</div>
-          <ol>
-            {history.map(step => {
-              const id = step.id;
-              const gameTurn = id ? `Go to move # ${id}` : `Go to game start `;
-              return (
-                <li key={id}>
-                  <button onClick={this.newjumpTo(id)}>{gameTurn}</button>
-                </li>
-              );
-            })}
-          </ol>
+          <ol>{history.map(this.newHistory)}</ol>
         </div>
       </div>
     );
