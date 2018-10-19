@@ -69,6 +69,8 @@ class Game extends Component {
     }
   };
 
+  newjumpTo = () => this.jumpTo;
+
   jumpTo = step => {
     this.setState({
       moves: step
@@ -99,7 +101,7 @@ class Game extends Component {
               const gameTurn = id ? `Go to move # ${id}` : `Go to game start `;
               return (
                 <li key={id}>
-                  <button onClick={() => this.jumpTo(id)}>{gameTurn}</button>
+                  <button onClick={this.newjumpTo(id)}>{gameTurn}</button>
                 </li>
               );
             })}
