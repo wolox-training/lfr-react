@@ -7,8 +7,7 @@ import styles from './styles.scss';
 
 class Board extends Component {
   renderSquare = place => {
-    const board = this.props.board;
-    const mouse = this.props.mouse;
+    const { board, mouse } = this.props;
     return <Square position={place} value={board[place]} handler={mouse} />;
   };
 
