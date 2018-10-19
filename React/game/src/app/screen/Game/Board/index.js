@@ -37,9 +37,8 @@ class Board extends Component {
 }
 
 Square.propTypes = {
-  board: PropTypes.array,
-  mouse: PropTypes.func.isRequired,
-  position: PropTypes.number
+  board: PropTypes.arrayOf(PropTypes.string).isRequired,
+  mouse: PropTypes.func.isRequired
 };
 
 export default Board;
