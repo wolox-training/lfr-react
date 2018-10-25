@@ -9,8 +9,9 @@
         "~components": "./src/app/components",
         "~screen": "./src/app/screen",
         "~redux": "./src/redux",
-        "~square": "./src/app/screen/Game/components/Square",
-        "~board": "./src/app/screen/Game/components/Board"
+        "~square": "./src/app/screens/Game/components/Square",
+        "~board": "./src/app/screens/Game/components/Board",
+        "@login": "./src/app/screens/Login/components/Login"
       }
     }]
   ]

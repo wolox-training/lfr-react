@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Game from '~screen/Game';
+import Login from '@login';
 
-const App = () => <Game />;
+const App = () => <Login />;
 
 export default App;
