@@ -11,7 +11,8 @@
         "~redux": "./src/redux",
         "~square": "./src/app/screens/Game/components/Square",
         "~board": "./src/app/screens/Game/components/Board",
-        "@login": "./src/app/screens/Login/components/Login"
+        "@login": "./src/app/screens/Login/components/Login",
+        "@redux": "./src/redux"
       }
     }]
   ]

@@ -1,41 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import actionCreators from '@redux/auth/actions';
+import PropTypes from 'prop-types';
 
-import styles from './styles.scss';
+import LoginLayout from './layout';
 
-class Login extends Component {
-  render() {
-    return (
-      <form>
-        <div className={styles.login}>
-          <div>
-            <label>First Name</label>
-            <input
-              className={styles.info}
-              name="firstName"
-              component="input"
-              type="text"
-              placeholder="First Name"
-            />
-          </div>
-          <div>
-            <label>Password</label>
-            <input
-              className={styles.info}
-              name="password"
-              component="input"
-              type="password"
-              placeholder="*****"
-            />
-          </div>
-          <button className={styles.button} type="submit">
-            Submit
-          </button>
-        </div>
-      </form>
-    );
-  }
+function Login({ submit, hasError }) {
+  return <LoginLayout onSubmit={submit} hasError={hasError} />;
 }
 
-// Square.propTypes = {};
+Login.propTypes = {
+  submit: PropTypes.func.isRequired,
+  hasError: PropTypes.bool.isRequired
+};
 
-export default Login;
+const mapStateToProps = ({ auth }) => ({
+  hasError: auth.hasError
+});
+
+const mapDispatchToProps = dispatch => ({
+  submit: () => dispatch(actionCreators.onLogin())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

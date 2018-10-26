@@ -5,6 +5,11 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-redux": "^5.1.0",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
     "wolox-react-scripts": "1.2.1"
   },
   "scripts": {
@@ -12,5 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@types/react-redux": "^6.0.9"
   }
 }
