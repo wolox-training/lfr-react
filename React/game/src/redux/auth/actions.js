@@ -3,10 +3,6 @@ export const actionsTypes = {
 };
 
 const actionCreators = {
-  submit: state => ({
-    type: actionsTypes.AUTH_LOGIN,
-    payload: state
-  }),
   onLogin: () => dispatch => {
     dispatch({
       type: actionsTypes.AUTH_LOGIN,

@@ -6,9 +6,6 @@ import styles from './styles.scss';
 import { serialWin } from './constants';
 
 class Game extends Component {
-  playerOne = 'X';
-  playerTwo = 'O';
-
   state = {
     moves: 0,
     gameEnd: false,
@@ -21,6 +18,8 @@ class Game extends Component {
       }
     ]
   };
+  playerOne = 'X';
+  playerTwo = 'O';
 
   mouseClick = place => {
     const { history, moves } = this.state;
@@ -59,7 +58,7 @@ class Game extends Component {
     const { history } = this.state;
     const { moves } = this.state;
     const board = history[moves - 1].board;
-    for (let i = 0; i < serialWin.length - 1; i++) {
+    for (let i = 0; i < serialWin.length - 1; i += 1) {
       if (
         board[serialWin[i][0]] === board[serialWin[i][1]] &&
         board[serialWin[i][1]] === board[serialWin[i][2]] &&

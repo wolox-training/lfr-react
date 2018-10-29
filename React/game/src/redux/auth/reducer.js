@@ -1,7 +1,7 @@
 import { actionsTypes } from './actions';
 
 const initialState = {
-  hasError: false
+  isLogin: false
 };
 
 export default function reducer(state = initialState, action) {
@@ -9,7 +9,7 @@ export default function reducer(state = initialState, action) {
     case actionsTypes.AUTH_LOGIN:
       return {
         ...state,
-        hasError: action.payload
+        isLogin: action.payload
       };
     default:
       return state;

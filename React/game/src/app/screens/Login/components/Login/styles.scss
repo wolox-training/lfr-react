@@ -27,7 +27,8 @@
   display: grid;
   @extend %login;
   margin: auto;
-  width: 90%;
+  padding: 0 15px;
+  width: 80%;
 }
 
 .button {
