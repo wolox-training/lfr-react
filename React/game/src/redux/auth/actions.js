@@ -8,7 +8,6 @@ const actionCreators = {
     payload: state
   }),
   onLogin: () => dispatch => {
-    console.log('onLogin');
     dispatch({
       type: actionsTypes.AUTH_LOGIN,
       payload: true

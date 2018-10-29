@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Board from '~board';
+import Board from '@board';
 
 import styles from './styles.scss';
 import { serialWin } from './constants';

@@ -6,12 +6,12 @@
   border-radius: 10px;
   color: $white;
   display: grid;
+  font-style: oblique;
   height: 300px;
   letter-spacing: 2px;
-  margin: auto;
+  margin: 10px auto;
   padding: 10px;
   text-align: center;
-  text-shadow: 3px 2px $grey;
   width: 50%;
 }
 
@@ -19,11 +19,14 @@
   border: 1px solid $blue;
   border-radius: 10px;
   height: 30px;
-  margin: 10px auto;
+  margin: 15px auto;
 }
 
 .info {
+  align-content: center;
+  display: grid;
   @extend %login;
+  margin: auto;
   width: 90%;
 }
 
@@ -36,4 +39,8 @@
     background: $green;
     border: 2px solid $red;
   }
+}
+
+.error {
+  background: $red;
 }
