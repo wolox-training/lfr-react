@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Game from '@game';
-
-import Login from '@login';
+import Game from '../../screens/Game/index';
+import Login from '../../screens/Login/components/Login/index';
 
 class App extends Component {
   render() {
@@ -15,7 +14,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/login" render={validateRoute} />
-          <Route path="/game" component={Game} />
+          <Route exact path="/game" component={Game} />
         </Switch>
       </Router>
     );

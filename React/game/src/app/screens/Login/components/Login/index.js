@@ -19,7 +19,7 @@ const mapStateToProps = ({ auth }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  submit: () => dispatch(actionCreators.onLogin())
+  submit: ({ email, password }) => dispatch(actionCreators.onLogin(email, password))
 });
 
 export default connect(

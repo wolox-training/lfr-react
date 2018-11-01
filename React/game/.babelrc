@@ -9,11 +9,11 @@
         "@components": "./src/app/components",
         "@screen": "./src/app/screen",
         "@redux": "./src/redux",
-        "@square": "./src/app/screens/Game/components/Square",
-        "@board": "./src/app/screens/Game/components/Board",
-        "@login": "./src/app/screens/Login/components/Login",
-        "@redux": "./src/redux",
-        "@game":"./src/app/screens/Game/"
+        "@game":"./src/app/screens/Game/",
+        "@services": "./src/services",
+        "@config": "./src/config",
+        "@utils": "./src/utils/",
+        "@constans": "./src/constans"
       }
     }]
   ]

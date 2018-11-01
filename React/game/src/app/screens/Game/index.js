@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { serialWin } from '@constans/game';
 
-import Board from '@board';
-
+import Board from './components/Board';
 import styles from './styles.scss';
-import { serialWin } from './constants';
 
 class Game extends Component {
+  playerOne = 'X';
+  playerTwo = 'O';
   state = {
     moves: 0,
     gameEnd: false,
@@ -18,8 +19,6 @@ class Game extends Component {
       }
     ]
   };
-  playerOne = 'X';
-  playerTwo = 'O';
 
   mouseClick = place => {
     const { history, moves } = this.state;
