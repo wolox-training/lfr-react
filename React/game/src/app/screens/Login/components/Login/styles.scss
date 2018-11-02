@@ -22,14 +22,7 @@
   margin: 15px auto;
 }
 
-.info {
-  align-content: center;
-  display: grid;
-  @extend %login;
-  margin: auto;
-  padding: 0 15px;
-  width: 80%;
-}
+
 
 .button {
   color: $blue;
@@ -40,8 +33,4 @@
     background: $green;
     border: 2px solid $red;
   }
-}
-
-.error {
-  background: $red;
 }

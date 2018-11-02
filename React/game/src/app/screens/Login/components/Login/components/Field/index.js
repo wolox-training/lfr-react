@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './styles.scss';
+
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     <label>{label}</label>

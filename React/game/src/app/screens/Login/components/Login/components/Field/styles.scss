@@ -1,0 +1,16 @@
+@import 'variables/colors';
+
+.error {
+  background: $red;
+}
+.info {
+  align-content: center;
+  border: 1px solid $blue;
+  border-radius: 10px;
+  display: grid;
+  height: 30px;
+  margin: 15px auto;
+  margin: auto;
+  padding: 0 15px;
+  width: 80%;
+}
