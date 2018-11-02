@@ -1,0 +1,47 @@
+@import 'variables/colors';
+
+.login {
+  align-content: center;
+  background: $blue;
+  border-radius: 10px;
+  color: $white;
+  display: grid;
+  font-style: oblique;
+  height: 300px;
+  letter-spacing: 2px;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+%login {
+  border: 1px solid $blue;
+  border-radius: 10px;
+  height: 30px;
+  margin: 15px auto;
+}
+
+.info {
+  align-content: center;
+  display: grid;
+  @extend %login;
+  margin: auto;
+  padding: 0 15px;
+  width: 80%;
+}
+
+.button {
+  color: $blue;
+  @extend %login;
+  text-shadow: 1px 1px $grey;
+  width: 50%;
+  &:active {
+    background: $green;
+    border: 2px solid $red;
+  }
+}
+
+.error {
+  background: $red;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Square from '~square';
+import Square from '../Square/index';
 
 import styles from './styles.scss';
 
