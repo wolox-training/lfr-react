@@ -9,11 +9,20 @@ import Login from '../../screens/Login/components/Login/index';
 class App extends Component {
   render() {
     const isLogin = this.props.isLogin;
-    const validateRoute = () => (isLogin ? <Redirect to="/game" /> : <Login />);
+    const userId = this.props.userId;
+    const validateRoute = props => {
+      const pathName = props.location.pathname;
+      if (isLogin && userId === 1) {
+        return <Game />;
+      } else if (!isLogin && pathName != '/login') {
+        return <Login />;
+      }
+      return <Login />;
+    };
     return (
       <Router>
         <Switch>
-          <Route exact path="/login" render={validateRoute} />
+          <Route path="/login" render={validateRoute} />
           <Route exact path="/game" component={Game} />
         </Switch>
       </Router>
@@ -26,7 +35,8 @@ App.propTypes = {
 };
 
 const mapStateToProps = ({ auth }) => ({
-  isLogin: auth.isLogin
+  isLogin: auth.isLogin,
+  userId: auth.userId
 });
 
 export default connect(mapStateToProps)(App);

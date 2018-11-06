@@ -100,7 +100,7 @@ class Game extends Component {
         <div className={styles.gameboard}>
           <Board mouse={this.mouseClick} board={current.board} />
         </div>
-        <div className={styles.gameinfo}>
+        <div className={styles.gameInfo}>
           <div>{status}</div>
           <ol>{history.map(this.newHistory)}</ol>
         </div>

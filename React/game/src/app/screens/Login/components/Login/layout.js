@@ -8,7 +8,7 @@ import renderField from './components/Field/index.js';
 import styles from './styles.scss';
 
 function LoginLayout(props) {
-  const { handleSubmit, isErrorAuth, msgError } = props;
+  const { handleSubmit, msgError, hasError } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.login}>
@@ -19,7 +19,7 @@ function LoginLayout(props) {
         <button className={styles.button} type="submit">
           Submit
         </button>
-        {isErrorAuth && <span>{msgError}</span>}
+        {!hasError && <span>{msgError}</span>}
       </div>
     </form>
   );
@@ -27,8 +27,8 @@ function LoginLayout(props) {
 
 LoginLayout.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  isErrorAuth: PropTypes.bool.isRequired,
-  msgError: PropTypes.string.isRequired
+  hasError: PropTypes.bool.isRequired,
+  msgError: PropTypes.string
 };
 
 export default reduxForm({ form: nameForm, validate })(LoginLayout);

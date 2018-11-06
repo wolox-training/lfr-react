@@ -13,7 +13,8 @@
         "@services": "./src/services",
         "@config": "./src/config",
         "@utils": "./src/utils/",
-        "@constans": "./src/constans"
+        "@constans": "./src/constans",
+        "@validations": "./src/validations"
       }
     }]
   ]

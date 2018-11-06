@@ -2,7 +2,9 @@ import { actionsTypes } from './actions';
 
 const initialState = {
   isLogin: false,
-  msgError: null
+  msgError: null,
+  token: null,
+  userId: null
 };
 
 export default function reducer(state = initialState, action) {

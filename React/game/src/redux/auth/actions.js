@@ -15,7 +15,11 @@ const actionCreators = {
       localStorage.setItem('userId', userId);
       dispatch({
         type: actionsTypes.AUTH_LOGIN,
-        payload: true
+        payload: {
+          isLogin: true,
+          token,
+          userId
+        }
       });
     } else {
       dispatch({
