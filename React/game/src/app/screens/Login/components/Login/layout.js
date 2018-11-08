@@ -8,7 +8,7 @@ import renderField from './components/Field/index.js';
 import styles from './styles.scss';
 
 function LoginLayout(props) {
-  const { handleSubmit, msgError, hasError } = props;
+  const { handleSubmit, msgError, isLogin } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.login}>
@@ -19,7 +19,7 @@ function LoginLayout(props) {
         <button className={styles.button} type="submit">
           Submit
         </button>
-        {!hasError && <span>{msgError}</span>}
+        {!isLogin && <span>{msgError}</span>}
       </div>
     </form>
   );
@@ -27,7 +27,7 @@ function LoginLayout(props) {
 
 LoginLayout.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  hasError: PropTypes.bool.isRequired,
+  isLogin: PropTypes.bool.isRequired,
   msgError: PropTypes.string
 };
 

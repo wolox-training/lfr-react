@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import actionCreators from '@redux/auth/actions';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Game from '../../screens/Game/index';
-import Login from '../../screens/Login/components/Login/index';
+import Game from '../../screens/Game';
+import Login from '../../screens/Login/components/Login';
+import ValidateRoute from '../authRoute';
 
 class App extends Component {
+  componentDidMount() {
+    const { loadingApp } = this.props;
+    loadingApp();
+  }
+
   render() {
-    const isLogin = this.props.isLogin;
-    const userId = this.props.userId;
-    const validateRoute = props => {
-      const pathName = props.location.pathname;
-      if (isLogin && userId === 1) {
-        return <Game />;
-      } else if (!isLogin && pathName != '/login') {
-        return <Login />;
-      }
-      return <Login />;
-    };
     return (
       <Router>
         <Switch>
-          <Route path="/login" render={validateRoute} />
-          <Route exact path="/game" component={Game} />
+          <ValidateRoute exact path="/login" component={Login} />
+          <ValidateRoute isPrivate component={Game} />
         </Switch>
       </Router>
     );
@@ -31,12 +27,14 @@ class App extends Component {
 }
 
 App.propTypes = {
-  isLogin: PropTypes.bool.isRequired
+  loadingApp: PropTypes.func.isRequired
 };
 
-const mapStateToProps = ({ auth }) => ({
-  isLogin: auth.isLogin,
-  userId: auth.userId
+const mapDispatchToProps = dispatch => ({
+  loadingApp: () => dispatch(actionCreators.loadingApp())
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import LoginLayout from './layout';
 
 function Login({ submit, isLogin, msgError }) {
-  return <LoginLayout onSubmit={submit} hasError={isLogin} msgError={msgError} />;
+  return <LoginLayout onSubmit={submit} isLogin={isLogin} msgError={msgError} />;
 }
 
 Login.propTypes = {

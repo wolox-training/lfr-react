@@ -19,6 +19,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         ...action.payload
       };
+    case actionsTypes.LOADING_APP:
+      return {
+        ...state,
+        ...action.payload
+      };
     default:
       return state;
   }
