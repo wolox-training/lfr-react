@@ -5,7 +5,8 @@ import Board from './components/Board';
 import styles from './styles.scss';
 
 class Game extends Component {
-  playerOne = 'X';
+  // eslint-disable-next-line
+  playerOne = 'X'; 
   playerTwo = 'O';
   state = {
     moves: 0,
