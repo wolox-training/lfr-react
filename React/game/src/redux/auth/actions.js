@@ -1,6 +1,6 @@
 import authService from '@services/authService';
 
-import loadLocalStore from '../../services/loadServices';
+import setLocalStorage from '../../services/loadServices';
 
 export const actionsTypes = {
   AUTH_LOGIN: 'AUTH_LOGIN',
@@ -11,21 +11,19 @@ export const actionsTypes = {
 const actionCreators = {
   onLogin: (email, password) => async dispatch => {
     const response = await authService.login(email, password);
-    const token = response.data.id;
-    const userId = response.data.userId;
-    const errorLogin = !!response.data.error;
-    loadLocalStore(token, userId);
     if (response.ok) {
+      const { id, userId } = response.data;
+      setLocalStorage(id, userId);
       dispatch({
         type: actionsTypes.AUTH_LOGIN,
         payload: {
           isLogin: true,
-          token,
-          userId,
-          errorLogin
+          id,
+          userId
         }
       });
     } else {
+      const errorLogin = !!response.data.error;
       dispatch({
         type: actionsTypes.AUTH_LOGIN_ERROR,
         payload: {
@@ -49,6 +47,15 @@ const actionCreators = {
         }
       });
     }
+  },
+  logout: () => dispatch => {
+    setLocalStorage(null, null);
+    dispatch({
+      type: actionsTypes.AUTH_LOGIN,
+      payload: {
+        isLogin: false
+      }
+    });
   }
 };
 

@@ -1,6 +1,6 @@
-const loadLocalStore = (token, userId) => {
+const setLocalStorage = (token, userId) => {
   localStorage.setItem('tokenAuth', token);
   localStorage.setItem('userId', userId);
 };
 
-export default loadLocalStore;
+export default setLocalStorage;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import actionCreators from '@redux/auth/actions';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import actionCreators from '@redux/auth/actions';
 
 import Home from '../../screens/Home';
 import Login from '../../screens/Login/components/Login';

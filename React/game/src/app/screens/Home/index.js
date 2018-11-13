@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import ErrorPage from '@screens/ErrorPage';
 
 import Game from './screens/Game';
-import Profile from './screens/Profile';
-import TopBar from './components/NavBar';
+import TopBar from './components/Topbar';
+import HistoryGame from './screens/History';
 
 function Home() {
   return (
@@ -12,7 +11,7 @@ function Home() {
       <TopBar />
       <Switch>
         <Route exact path="/game" component={Game} />
-        <Route exact path="/history" component={HisyoryGame} />
+        <Route exact path="/historygame" component={HistoryGame} />
       </Switch>
     </Fragment>
   );
