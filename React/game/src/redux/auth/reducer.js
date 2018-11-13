@@ -4,7 +4,8 @@ const initialState = {
   isLogin: false,
   msgError: null,
   token: null,
-  userId: null
+  userId: null,
+  errorLogin: true
 };
 
 export default function reducer(state = initialState, action) {

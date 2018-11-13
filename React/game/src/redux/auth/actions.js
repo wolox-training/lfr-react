@@ -1,6 +1,6 @@
 import authService from '@services/authService';
 
-import loadService from '../../services/loadServices';
+import loadLocalStore from '../../services/loadServices';
 
 export const actionsTypes = {
   AUTH_LOGIN: 'AUTH_LOGIN',
@@ -13,21 +13,24 @@ const actionCreators = {
     const response = await authService.login(email, password);
     const token = response.data.id;
     const userId = response.data.userId;
+    const errorLogin = !!response.data.error;
+    loadLocalStore(token, userId);
     if (response.ok) {
-      loadService(email, password);
       dispatch({
         type: actionsTypes.AUTH_LOGIN,
         payload: {
           isLogin: true,
           token,
-          userId
+          userId,
+          errorLogin
         }
       });
     } else {
       dispatch({
         type: actionsTypes.AUTH_LOGIN_ERROR,
         payload: {
-          msgError: 'Usuario o Constaseña invalido'
+          msgError: 'Usuario o Contraseña invalido',
+          errorLogin
         }
       });
     }

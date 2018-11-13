@@ -8,15 +8,20 @@
   font-weight: bold;
   height: 34px;
   line-height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
+  margin: 2px;
   padding: 0;
   text-align: center;
+  transition: 0.35s ease-in-out;
   width: 34px;
-}
 
-.square:focus {
-  outline: none;
+  &:focus {
+    outline-color: $grey;
+    outline-style: double;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .kbd-navigation .square:focus {

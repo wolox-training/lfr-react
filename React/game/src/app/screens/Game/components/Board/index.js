@@ -13,8 +13,7 @@ class Board extends Component {
 
   render() {
     return (
-      <div>
-        <div className={styles.status}>{status}</div>
+      <div className={styles.board}>
         <div className={styles.boardRow}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}

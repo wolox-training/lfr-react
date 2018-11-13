@@ -36,7 +36,7 @@ class Game extends Component {
           }
         ]),
         turn: this.state.turn === this.playerOne ? this.playerTwo : this.playerOne,
-        moves: ++this.state.moves
+        moves: this.state.moves + 1
       });
     }
     const result = this.winner();
@@ -56,7 +56,7 @@ class Game extends Component {
   winner = () => {
     const { history } = this.state;
     const { moves } = this.state;
-    const board = history[moves - 1].board;
+    const board = history[moves].board;
     for (let i = 0; i < serialWin.length - 1; i += 1) {
       if (
         board[serialWin[i][0]] === board[serialWin[i][1]] &&

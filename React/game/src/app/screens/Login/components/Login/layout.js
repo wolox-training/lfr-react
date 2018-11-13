@@ -7,19 +7,23 @@ import PropTypes from 'prop-types';
 import renderField from './components/Field/index.js';
 import styles from './styles.scss';
 
-function LoginLayout(props) {
-  const { handleSubmit, msgError, isLogin } = props;
+function LoginLayout(props, htmlFor) {
+  const { handleSubmit, msgError, errorLogin } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.login}>
-        <label className={styles.info}>E-Mail</label>
+        <label htmlFor={htmlFor} className={styles.info}>
+          E-Mail
+        </label>
         <Field name="email" component={renderField} type="text" placeholder="email" />
-        <label className={styles.info}>Password</label>
+        <label htmlFor={htmlFor} className={styles.info}>
+          Password
+        </label>
         <Field name="password" component={renderField} type="password" placeholder="*****" />
         <button className={styles.button} type="submit">
           Submit
         </button>
-        {!isLogin && <span>{msgError}</span>}
+        {!errorLogin && <span>{msgError}</span>}
       </div>
     </form>
   );
@@ -27,7 +31,7 @@ function LoginLayout(props) {
 
 LoginLayout.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  isLogin: PropTypes.bool.isRequired,
+  errorLogin: PropTypes.bool,
   msgError: PropTypes.string
 };
 
