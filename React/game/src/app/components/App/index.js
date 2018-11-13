@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Game from '../../screens/Game';
+import Home from '../../screens/Home';
 import Login from '../../screens/Login/components/Login';
 import ValidateRoute from '../authRoute';
 
@@ -19,7 +19,7 @@ class App extends Component {
       <Router>
         <Switch>
           <ValidateRoute exact path="/login" component={Login} />
-          <ValidateRoute isPrivate component={Game} />
+          <ValidateRoute isPrivate component={Home} />
         </Switch>
       </Router>
     );
