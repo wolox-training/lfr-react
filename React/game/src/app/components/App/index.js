@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import actionCreators from '@redux/auth/actions';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import actionCreators from '@redux/auth/actions';
 
 import Game from '../../screens/Game';
 import Login from '../../screens/Login/components/Login';
@@ -19,7 +19,7 @@ class App extends Component {
       <Router>
         <Switch>
           <ValidateRoute exact path="/login" component={Login} />
-          <ValidateRoute isPrivate component={Game} />
+          <ValidateRoute path="/game" isPrivate component={Game} />
         </Switch>
       </Router>
     );

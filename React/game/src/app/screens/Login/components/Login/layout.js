@@ -1,14 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { validate } from '@utils/formValidations';
 import { nameForm } from '@constans/form';
-import PropTypes from 'prop-types';
 
 import renderField from './components/Field/index.js';
 import styles from './styles.scss';
 
-function LoginLayout(props, htmlFor) {
-  const { handleSubmit, msgError, errorLogin } = props;
+function LoginLayout({ handleSubmit, msgError, errorLogin }, htmlFor) {
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.login}>

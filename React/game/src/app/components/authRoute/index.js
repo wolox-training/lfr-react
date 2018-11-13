@@ -24,9 +24,9 @@ ValidateRouter.propTypes = {
   isLogin: PropTypes.bool
 };
 
-const mapStateToProps = ({ auth }) => ({
-  isLogin: auth.isLogin,
-  userId: auth.userId
+const mapStateToProps = state => ({
+  isLogin: state.auth.isLogin,
+  userId: state.auth.userId
 });
 
 export default connect(mapStateToProps)(ValidateRouter);

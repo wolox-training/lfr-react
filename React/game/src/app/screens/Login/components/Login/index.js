@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import actionCreators from '@redux/auth/actions';
 import PropTypes from 'prop-types';
+import actionCreators from '@redux/auth/actions';
 
 import LoginLayout from './layout';
 
@@ -15,9 +15,9 @@ Login.propTypes = {
   msgError: PropTypes.string
 };
 
-const mapStateToProps = ({ auth }) => ({
-  errorLogin: auth.error,
-  msgError: auth.msgError
+const mapStateToProps = state => ({
+  errorLogin: state.auth.errorLogin,
+  msgError: state.auth.msgError
 });
 
 const mapDispatchToProps = dispatch => ({
