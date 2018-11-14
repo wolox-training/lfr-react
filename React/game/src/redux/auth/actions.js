@@ -47,7 +47,7 @@ const actionCreators = {
     }
   },
   logout: () => dispatch => {
-    setLocalStorage(null, null);
+    localStorageService.setLocalStorage(null, null);
     dispatch({
       type: actionsTypes.AUTH_LOGIN,
       payload: {

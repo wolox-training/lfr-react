@@ -7,7 +7,7 @@ class ValidateRouter extends PureComponent {
   renderRoute = props => {
     const { isPrivate, component: Component, isLogin } = this.props;
     if (isLogin && !isPrivate) {
-      return <Redirect to="/home" />;
+      return <Redirect to="/game" />;
     } else if (!isLogin && isPrivate) {
       return <Redirect to="/login" />;
     }

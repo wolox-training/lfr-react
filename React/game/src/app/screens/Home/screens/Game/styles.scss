@@ -10,11 +10,11 @@
 
 .game {
   background: $aliceblue;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   display: flex;
   @extend %game;
   flex-direction: row;
-  min-height: 185px;
+  min-height: 200px;
   transition: width 0.35s ease-in-out;
   width: 50%;
 }
