@@ -2,6 +2,8 @@
 
 .login {
   align-content: center;
+  animation-duration: 1s;
+  animation-name: example;
   background: $blue;
   border-radius: 10px;
   color: $white;
@@ -13,6 +15,13 @@
   padding: 10px;
   text-align: center;
   width: 50%;
+}
+
+@keyframes example {
+  50% {
+    background-color: $grey;
+    transform: scale(1.5, 1.5);
+  }
 }
 
 %login {

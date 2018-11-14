@@ -22,7 +22,7 @@ function LoginLayout({ handleSubmit, msgError, errorLogin }, htmlFor) {
         <button className={styles.button} type="submit">
           Submit
         </button>
-        {!errorLogin && <span>{msgError}</span>}
+        {errorLogin && <span>{msgError}</span>}
       </div>
     </form>
   );

@@ -21,7 +21,7 @@ class ValidateRouter extends PureComponent {
 }
 
 ValidateRouter.propTypes = {
-  isLogin: PropTypes.bool
+  isLogin: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({

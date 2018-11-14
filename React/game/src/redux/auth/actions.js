@@ -1,6 +1,6 @@
 import authService from '@services/authService';
 
-import setLocalStorage from '../../services/loadServices';
+import localStorageService from '../../services/localStorageService';
 
 export const actionsTypes = {
   AUTH_LOGIN: 'AUTH_LOGIN',
@@ -13,7 +13,7 @@ const actionCreators = {
     const response = await authService.login(email, password);
     if (response.ok) {
       const { id, userId } = response.data;
-      setLocalStorage(id, userId);
+      localStorageService.setLocalStorage(id, userId);
       dispatch({
         type: actionsTypes.AUTH_LOGIN,
         payload: {
@@ -34,9 +34,7 @@ const actionCreators = {
     }
   },
   loadingApp: () => dispatch => {
-    const token = localStorage.getItem('tokenAuth');
-    const isLogin = !!token;
-    const userId = localStorage.getItem('userId');
+    const { isLogin, token, userId } = localStorageService.getLocalStorage();
     if (isLogin) {
       dispatch({
         type: actionsTypes.LOADING_APP,
