@@ -1,0 +1,48 @@
+@import 'variables/colors';
+
+.navbar {
+  align-items: center;
+  background: $midelblue;
+  border-color: $green;
+  border-radius: 5px 5px 0 0;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 10px;
+  transition: width 0.35s ease-in-out;
+  width: 50%;
+  z-index: 100;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+
+.list {
+  background: none;
+  border: none;
+  border-radius: 10px;
+  height: 20px;
+  margin: 0 10px;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+  width: 55px;
+  &:hover {
+    background: $blue;
+  }
+}
+
+.link {
+  color: $white;
+  text-decoration: none;
+}
+
+@media (max-width: 620px) {
+  .navbar {
+    width: 95%;
+  }
+}

@@ -45,6 +45,15 @@ const actionCreators = {
         }
       });
     }
+  },
+  logout: () => dispatch => {
+    localStorageService.setLocalStorage(null, null);
+    dispatch({
+      type: actionsTypes.AUTH_LOGIN,
+      payload: {
+        isLogin: false
+      }
+    });
   }
 };
 

@@ -1,0 +1,31 @@
+@import 'variables/colors';
+
+.history {
+  background: $lightGrey;
+  border-radius: 0 0 5px 5px;
+  margin: auto;
+  min-height: 260px;
+  padding: 10px;
+  transition: width 0.35s ease-in-out;
+  width: 50%;
+}
+
+%history {
+  margin: 10px;
+}
+
+.title {
+  @extend %history;
+  text-align: center;
+}
+
+.text {
+  @extend %history;
+  text-align: justify;
+}
+
+@media (max-width: 620px) {
+  .history {
+    width: 95%;
+  }
+}
