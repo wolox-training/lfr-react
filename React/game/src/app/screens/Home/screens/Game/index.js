@@ -5,7 +5,8 @@ import Board from './components/Board';
 import styles from './styles.scss';
 
 class Game extends Component {
-  playerOne = 'X';
+  // eslint-disable-next-line
+  playerOne = 'X'; 
   playerTwo = 'O';
   state = {
     moves: 0,
@@ -36,7 +37,7 @@ class Game extends Component {
           }
         ]),
         turn: this.state.turn === this.playerOne ? this.playerTwo : this.playerOne,
-        moves: ++this.state.moves
+        moves: this.state.moves + 1
       });
     }
     const result = this.winner();
@@ -56,7 +57,7 @@ class Game extends Component {
   winner = () => {
     const { history } = this.state;
     const { moves } = this.state;
-    const board = history[moves - 1].board;
+    const board = history[moves].board;
     for (let i = 0; i < serialWin.length - 1; i += 1) {
       if (
         board[serialWin[i][0]] === board[serialWin[i][1]] &&
@@ -100,7 +101,7 @@ class Game extends Component {
         <div className={styles.gameboard}>
           <Board mouse={this.mouseClick} board={current.board} />
         </div>
-        <div className={styles.gameinfo}>
+        <div className={styles.gameInfo}>
           <div>{status}</div>
           <ol>{history.map(this.newHistory)}</ol>
         </div>

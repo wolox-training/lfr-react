@@ -1,7 +1,11 @@
 import { actionsTypes } from './actions';
 
 const initialState = {
-  isLogin: false
+  isLogin: false,
+  msgError: null,
+  token: null,
+  userId: null,
+  errorLogin: false
 };
 
 export default function reducer(state = initialState, action) {
@@ -9,7 +13,17 @@ export default function reducer(state = initialState, action) {
     case actionsTypes.AUTH_LOGIN:
       return {
         ...state,
-        isLogin: action.payload
+        ...action.payload
+      };
+    case actionsTypes.AUTH_LOGIN_ERROR:
+      return {
+        ...state,
+        ...action.payload
+      };
+    case actionsTypes.LOADING_APP:
+      return {
+        ...state,
+        ...action.payload
       };
     default:
       return state;

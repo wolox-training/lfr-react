@@ -1,0 +1,38 @@
+@import 'variables/colors';
+
+%game {
+  align-self: center;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.game {
+  background: $aliceblue;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  @extend %game;
+  flex-direction: row;
+  min-height: 200px;
+  transition: width 0.35s ease-in-out;
+  width: 50%;
+}
+
+.game-info {
+  @extend %game;
+  text-align: left;
+}
+
+.gameboard {
+  @extend %game;
+}
+
+@media (max-width: 620px) {
+  .game {
+    width: 95%;
+  }
+  .gameboard {
+    padding: 2px;
+  }
+}

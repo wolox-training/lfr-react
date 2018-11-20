@@ -1,21 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import actionCreators from '@redux/auth/actions';
 import PropTypes from 'prop-types';
+import actionCreators from '@redux/auth/actions';
 
 import LoginLayout from './layout';
 
-function Login({ submit, isLogin }) {
-  return <LoginLayout onSubmit={submit} hasError={isLogin} />;
+function Login({ submit, errorLogin, msgError }) {
+  return <LoginLayout onSubmit={submit} errorLogin={errorLogin} msgError={msgError} />;
 }
 
 Login.propTypes = {
   submit: PropTypes.func.isRequired,
-  isLogin: PropTypes.bool.isRequired
+  errorLogin: PropTypes.bool,
+  msgError: PropTypes.string
 };
 
-const mapStateToProps = ({ auth }) => ({
-  isLogin: auth.isLogin
+const mapStateToProps = state => ({
+  errorLogin: state.auth.errorLogin,
+  msgError: state.auth.msgError
 });
 
 const mapDispatchToProps = dispatch => ({

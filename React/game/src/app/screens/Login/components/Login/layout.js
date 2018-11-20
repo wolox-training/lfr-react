@@ -1,25 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { validate } from '@utils/formValidations';
+import { nameForm } from '@constans/form';
 
 import renderField from './components/Field/index.js';
 import styles from './styles.scss';
 
-function LoginLayout(props) {
-  const { handleSubmit } = props;
+function LoginLayout({ handleSubmit, msgError, errorLogin }, htmlFor) {
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.login}>
-        <label className={styles.info}>E-Mail</label>
+        <label htmlFor={htmlFor} className={styles.info}>
+          E-Mail
+        </label>
         <Field name="email" component={renderField} type="text" placeholder="email" />
-        <label className={styles.info}>Password</label>
+        <label htmlFor={htmlFor} className={styles.info}>
+          Password
+        </label>
         <Field name="password" component={renderField} type="password" placeholder="*****" />
         <button className={styles.button} type="submit">
           Submit
         </button>
+        {errorLogin && <span>{msgError}</span>}
       </div>
     </form>
   );
 }
 
-export default reduxForm({ form: 'loginForm', validate })(LoginLayout);
+LoginLayout.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  errorLogin: PropTypes.bool,
+  msgError: PropTypes.string
+};
+
+export default reduxForm({ form: nameForm, validate })(LoginLayout);
